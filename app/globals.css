@@ -1,0 +1,166 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Emerald green from logo */
+  --emerald: oklch(0.35 0.12 150);
+  --emerald-light: oklch(0.45 0.12 150);
+  --emerald-dark: oklch(0.25 0.1 150);
+  
+  /* Gold/amber from logo */
+  --gold: oklch(0.75 0.15 80);
+  --gold-light: oklch(0.85 0.12 80);
+  --gold-dark: oklch(0.55 0.15 70);
+  
+  /* Cream/ivory backgrounds */
+  --cream: oklch(0.98 0.01 90);
+  --cream-dark: oklch(0.95 0.02 85);
+  
+  --background: var(--cream);
+  --foreground: oklch(0.2 0.02 150);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 150);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 150);
+  --primary: var(--emerald);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: var(--gold);
+  --secondary-foreground: oklch(0.2 0.02 150);
+  --muted: var(--cream-dark);
+  --muted-foreground: oklch(0.45 0.02 150);
+  --accent: var(--gold-light);
+  --accent-foreground: oklch(0.2 0.02 150);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.02 85);
+  --input: oklch(0.92 0.01 85);
+  --ring: var(--emerald);
+  --chart-1: var(--emerald);
+  --chart-2: var(--gold);
+  --chart-3: var(--emerald-light);
+  --chart-4: var(--gold-light);
+  --chart-5: var(--emerald-dark);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: var(--emerald);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: var(--cream-dark);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: var(--emerald);
+}
+
+.dark {
+  --background: oklch(0.15 0.02 150);
+  --foreground: oklch(0.95 0.01 90);
+  --card: oklch(0.18 0.02 150);
+  --card-foreground: oklch(0.95 0.01 90);
+  --popover: oklch(0.18 0.02 150);
+  --popover-foreground: oklch(0.95 0.01 90);
+  --primary: var(--emerald-light);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: var(--gold);
+  --secondary-foreground: oklch(0.15 0.02 150);
+  --muted: oklch(0.25 0.02 150);
+  --muted-foreground: oklch(0.65 0.02 150);
+  --accent: var(--gold-dark);
+  --accent-foreground: oklch(0.95 0.01 90);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.3 0.02 150);
+  --input: oklch(0.25 0.02 150);
+  --ring: var(--emerald-light);
+  --chart-1: var(--emerald-light);
+  --chart-2: var(--gold);
+  --chart-3: var(--emerald);
+  --chart-4: var(--gold-light);
+  --chart-5: var(--emerald-dark);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: var(--emerald-light);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: var(--emerald-light);
+}
+
+@theme inline {
+  --font-sans: 'Playfair Display', 'Georgia', serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Source Sans 3', 'Helvetica', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-emerald: var(--emerald);
+  --color-emerald-light: var(--emerald-light);
+  --color-emerald-dark: var(--emerald-dark);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--emerald);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald-dark);
+}
