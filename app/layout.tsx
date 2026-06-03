@@ -16,9 +16,50 @@ const sourceSans = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: 'Amanah Scholars Foundation | Interest-Free Path to Higher Education',
-  description: 'Amanah Scholars Foundation supports Muslim students and students from disadvantaged backgrounds through financial assistance, mentorship, academic advising, and community-backed support.',
-  keywords: ['scholarships', 'Muslim students', 'financial aid', 'interest-free', 'education', 'mentorship', 'non-profit'],
+  title: {
+    default: "Amanah Scholars Foundation",
+    template: "%s | Amanah Scholars Foundation",
+  },
+
+  description:
+    "Interest-free educational funding, mentorship, and academic support for Muslim students and students from disadvantaged backgrounds.",
+
+  keywords: [
+    "scholarships",
+    "student funding",
+    "interest free education",
+    "Islamic scholarship",
+    "Muslim students",
+    "educational assistance",
+    "higher education",
+  ],
+
+  authors: [{ name: "Amanah Scholars Foundation" }],
+
+  metadataBase: new URL("https://www.amanahscholars.org"),
+
+  openGraph: {
+    title: "Amanah Scholars Foundation",
+    description: "Building an interest-free path to higher education.",
+    url: "https://www.amanahscholars.org",
+    siteName: "Amanah Scholars Foundation",
+    type: "website",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Amanah Scholars Foundation",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Amanah Scholars Foundation",
+    description: "Building an interest-free path to higher education.",
+    images: ["/logo.jpg"],
+  },
 }
 
 export default function RootLayout({
